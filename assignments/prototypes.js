@@ -141,3 +141,84 @@ Humanoid.prototype.greet = function (){return `${this.name} offers a greeting in
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
+function Hero(attributes){
+  Humanoid.call(this, attributes);
+  this.karma = attributes.karma;
+}
+
+Hero.prototype = Object.create(Humanoid.prototype);
+Hero.prototype.fightInjustice = function (target){
+  this.karma += 5;
+  target.healthPoints -= 5;
+  
+  if (target.healthPoints === 0){
+    return `${target.name} has been killed in honorable combat, and in the most heroic way and ${this.name} now has ${this.karma} karma points!`
+  } else if (target.healthPoints > 0){
+    return `${target.name} is still alive. Oops.`
+  } else {
+    return `${target.name} is already dead! You can't kill the dead.`
+  }
+}
+
+function Villain(attributes){
+  Humanoid.call(this,attributes);
+  this.karma = attributes.karma;
+}
+
+Villain.prototype = Object.create(Humanoid.prototype);
+Villain.prototype.fightJustice = function (target){
+  this.karma += -5;
+  target.healthPoints -= 2;
+  
+  if (target.healthPoints === 0){
+    return `${target.name} has been killed in honorable combat and in the most dastardly way, and ${this.name} has now only ${this.karma} karma points!`
+  } else if (target.healthPoints >0){
+    return `${target.name} is still alive. Curses!!!`
+  } else{
+    return `${target.name} is already dead, you monster!`
+  }
+}
+
+
+const Orlando = new Hero({
+  createdAt: new Date(),
+  dimensions: {
+    length: 2,
+    width: 2,
+    height: 2,
+  },
+  healthPoints: 15,
+  name: 'Orlando',
+  team: 'The Twelve Peers of Charlemagne',
+  weapons: [
+    'Durendal',
+    'Shield of Hector',
+  ],
+  language: 'Something Like French',
+  karma:500
+});
+
+
+const Morgan = new Villain({
+  createdAt: new Date(),
+  dimensions: {
+    length: 2,
+    width: 2,
+    height: 2,
+  },
+  healthPoints: 5,
+  name: 'Morgan Le Fay',
+  team: 'The Anti-Round Table',
+  weapons: [
+    'Staff of Merlin',
+    'BFG9000',
+  ],
+  language: 'The Old Forgotten Tongues',
+  karma:-500
+});
+
+console.log(Morgan);
+console.log(Orlando);
+
+console.log(Orlando.fightInjustice(Morgan));
+console.log(Orlando.fightInjustice(Morgan));
