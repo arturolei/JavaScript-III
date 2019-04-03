@@ -47,9 +47,11 @@ Person.prototype.introduce = function (){
 
 const Linda = new Person('Linda');
 
+console.log("Principle 3: new Binding")
 Linda.introduce();
 
 // Principle 4
+// code example for Explicit Binding
 function Robot(name,metal){
     Person.call(this,name);//explicit binding here
     this.metal = metal;
@@ -59,6 +61,6 @@ Robot.prototype.speak = function(){
     console.log (`I am ${this.name}, and I am made of ${this.metal}`)
 }
 
-// code example for Explicit Binding
+console.log("Principle 3: Explicit Binding")
 const Robbie = new Robot('Robbie','platinum');
 Robbie.speak();

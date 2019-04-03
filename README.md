@@ -16,8 +16,8 @@ This challenge focuses on using the `this` keyword as well as getting comfortabl
 **Follow these steps for completing your project.**
 
 * [X] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
-* [ ] Add your project manager as a reviewer on the pull-request
-* [ ] Your project manager will count the project as complete by merging the branch back into master.
+* [X] Add your project manager as a reviewer on the pull-request
+* [X] Your project manager will count the project as complete by merging the branch back into master.
 
 ## Assignment Set Up
 
@@ -34,3 +34,24 @@ The prototype challenge will focus on building prototypes for a fantasy themed g
 
 * [X] Read the instructions found within the file carefully to finish the challenges.
 * [X] Remember to un-comment the objects and console logs to test your work at the bottom of the page.
+
+
+## Reflections (Also Stand-Up Form Answers)
+
+### What Did I Do Today (04/02/19)
+I finished the MVP and stretch for JS Fundamentals III. 
+
+### What Do I Need to Do Tomorrow
+I need to finish reviewing the TK materials for JS Fundamentals IV. 
+
+### Challenges/Breakthroughs
+#### Challenges:
+- I had some difficulty with declaring object Prototype Method, but I think things are beginning to more sense. 
+- I had some difficulty with the prototype.js assignment.
+
+#### Breakthrough:
+- I am have a better understanding of .call() and .apply(); this all makes sense. 
+- I feel more confident using `this`. 
+
+
+

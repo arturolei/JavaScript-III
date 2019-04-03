@@ -152,13 +152,13 @@ Hero.prototype.fightInjustice = function (target){
   target.healthPoints -= 5;
   
   if (target.healthPoints === 0){
-    return `${target.name} has been killed in honorable combat, and in the most heroic way and ${this.name} now has ${this.karma} karma points!`
+    return `${this.name} strikes ${target.name} with ${this.weapons[0]}. ${target.name} has been killed in honorable combat, and in the most heroic way and ${this.name} now has ${this.karma} karma points!`
   } else if (target.healthPoints > 0){
-    return `${target.name} is still alive. Oops.`
+    return `${this.name} strikes ${target.name} with ${this.weapons[0]}. ${target.name} is still alive. Oops.`
   } else {
-    return `${target.name} is already dead! You can't kill the dead.`
+    return `${this.name} heroically strikes again, but ${target.name} is already dead! You can't kill the dead.`
   }
-}
+};
 
 function Villain(attributes){
   Humanoid.call(this,attributes);
@@ -168,16 +168,16 @@ function Villain(attributes){
 Villain.prototype = Object.create(Humanoid.prototype);
 Villain.prototype.fightJustice = function (target){
   this.karma += -5;
-  target.healthPoints -= 2;
+  target.healthPoints -= 2000;
   
   if (target.healthPoints === 0){
-    return `${target.name} has been killed in honorable combat and in the most dastardly way, and ${this.name} has now only ${this.karma} karma points!`
+    return `${this.name} strikes ${target.name} with ${this.weapons[0]}. ${target.name} has been killed in dishonorable combat and in the most dastardly way, and ${this.name} has now only ${this.karma} karma points!`
   } else if (target.healthPoints >0){
-    return `${target.name} is still alive. Curses!!!`
+    return `${this.name} strikes ${target.name} with ${this.weapons[0]}, but ${target.name} is still alive. Curses!!!`
   } else{
-    return `${target.name} is already dead, you monster!`
+    return `${this.name} strikes with vehemence and venom, but ${target.name} is already dead, you monster!`
   }
-}
+};
 
 
 const Orlando = new Hero({
@@ -187,7 +187,7 @@ const Orlando = new Hero({
     width: 2,
     height: 2,
   },
-  healthPoints: 15,
+  healthPoints: 2000,
   name: 'Orlando',
   team: 'The Twelve Peers of Charlemagne',
   weapons: [
@@ -220,5 +220,15 @@ const Morgan = new Villain({
 console.log(Morgan);
 console.log(Orlando);
 
+//What happens when hero strikes villain/target
 console.log(Orlando.fightInjustice(Morgan));
+
+//What happens when target hitpoints reach zero and hero strikes
 console.log(Orlando.fightInjustice(Morgan));
+
+
+//what happens when villain strikes hero
+console.log(Morgan.fightJustice(Orlando));
+
+//What happens when villain has killed hero
+console.log(Morgan.fightJustice(Orlando));
