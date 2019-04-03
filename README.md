@@ -38,6 +38,9 @@ The prototype challenge will focus on building prototypes for a fantasy themed g
 
 ## Reflections (Also Stand-Up Form Answers)
 
+### Pull Request Link: 
+[https://github.com/arturolei/JavaScript-III/pull/1](https://github.com/arturolei/JavaScript-III/pull/1)
+
 ### What Did I Do Today (04/02/19)
 I finished the MVP and stretch for JS Fundamentals III. 
 
@@ -49,7 +52,7 @@ I need to finish reviewing the TK materials for JS Fundamentals IV.
 - I had some difficulty with declaring object Prototype Method, but I think things are beginning to more sense. 
 - I had some difficulty with the prototype.js assignment.
 
-#### Breakthrough:
+#### Breakthroughs:
 - I am have a better understanding of .call() and .apply(); this all makes sense. 
 - I feel more confident using `this`. 
 
